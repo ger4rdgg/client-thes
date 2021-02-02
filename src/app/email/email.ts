@@ -6,6 +6,7 @@ export class EmailRequest extends Resource {
   subject: string;
   body: string;
   sender: string;
+  attachment: string;
 
   constructor(values: object = {}) {
     super();

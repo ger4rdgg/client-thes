@@ -9,14 +9,16 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { EmailCreateComponent } from './email/email-create/email-create.component';
 import {ExternalConfigurationService} from './external-configuration-service';
 import {NgxHalClientModule} from '@lagoshny/ngx-hal-client';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
+import { ImageUploaderComponent } from './image/image-uploader/image-uploader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmailRequestsComponent,
     NavbarComponent,
-    EmailCreateComponent
+    EmailCreateComponent,
+    ImageUploaderComponent
   ],
   imports: [
     BrowserModule,
