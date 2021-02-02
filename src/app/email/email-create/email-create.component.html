@@ -1,0 +1,55 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Sender</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="email.sender" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Body</label>
+        <input type="text" class="form-control" id="body"
+               required
+               [(ngModel)]="email.body" name="name"
+               #name="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject"
+               required
+               [(ngModel)]="email.subject" name="name"
+               #name="ngModel">
+      </div>
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Sender</div>
+      <div class="col-xs-9">{{ email.sender }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Subject</div>
+      <div class="col-xs-9">{{ email.subject }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Body</div>
+      <div class="col-xs-9">{{ email.body }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>
